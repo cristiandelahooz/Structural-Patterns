@@ -64,6 +64,21 @@ public class CompositePatternDemo {
         composite.add(square1);
         composite.add(triangle2);
 
+        //Create a composite inside the previous composite
+
+        //first create the triangles and circles
+        Graphic triangle3 = new Triangle();
+        Graphic square2 = new Square();
+
+        //now the composite2
+        CompositeGraphic composite2 = new CompositeGraphic();
+        composite2.add(triangle3);
+        composite2.add(square2);
+
+
+        //now let's add composite2 inside composite
+        composite.add(composite2);
+
         // Draw all components
         System.out.println("Drawing composite graphic:");
         composite.draw();
